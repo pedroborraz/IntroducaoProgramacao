@@ -7,12 +7,14 @@ def numero_por_extenso(numero):
 
     unidades = ["zero", "um", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove"]
     dezenas = ["dez", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"]
-    segunda_dezena = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"]
+    segunda_dezena = ["onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"]
 
     if numero < 10:
         return unidades[numero]
+    elif numero == 10:
+        return dezenas[0]
     elif numero < 20:
-        return segunda_dezena[numero - 10]
+        return segunda_dezena[numero - 11]
     else:
         dezena = numero // 10
         unidade = numero % 10
