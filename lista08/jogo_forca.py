@@ -44,7 +44,7 @@ def main():
         posicao = jogo_forca(palavra, palavra_oculta, letra)
 
         if posicao != "letra nao encontrada":
-            palavra_oculta = palavra_oculta[:posicao] + letra + palavra_oculta[posicao + 1:]
+            palavra_oculta = palavra_oculta[:posicao] + letra + palavra_oculta[posicao + 1:] # _ ate a posicao da letra certa + letra certa + o resto de _
         else:
             erros += 1
             print(f"Voce errou pela {erros} vez! Tente de novo.")
