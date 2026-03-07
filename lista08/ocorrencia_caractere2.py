@@ -6,7 +6,6 @@ caractere e o valor corresponde ao número de vezes que ele aparece na string.
 """
 
 def contar_aparicoes_caracteres(frase):
-
     aparicoes = {}
 
     for caractere in frase:

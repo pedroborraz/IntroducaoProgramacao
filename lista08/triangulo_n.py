@@ -12,8 +12,10 @@ imprima até a n-ésima linha.
 
 def triangulo_base(n):
     triangulo = ""
+
     for i in range(1, n + 1):
-        triangulo += f"{i} " * i + "\n"
+        triangulo += f"{i} " * i + "\n" # repete o numero i+espaco, i vezes, e quebra linha
+
     return triangulo
 
 def main():

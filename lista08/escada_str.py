@@ -10,10 +10,10 @@ Fulano
 """
 
 def imprimir_vertical_escada(texto):
-
     string = ""
+
     for i in range(len(texto)):
-        string += texto[:i+1] + "\n"
+        string += texto[:i+1] + "\n" # cada iteracao add uma letra a mais da string original e quebra a linha
 
     return string
 

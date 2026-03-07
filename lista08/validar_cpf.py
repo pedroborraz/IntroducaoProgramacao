@@ -6,8 +6,6 @@ de CPF são formados)
 """
 
 def digitos_cpf(cpf):
-    """extrai apenas os digitos do cpf"""
-
     lista_numeros = []
 
     for caractere in cpf:
@@ -17,11 +15,10 @@ def digitos_cpf(cpf):
     return lista_numeros
 
 def validar_cpf(cpf):
-    """faz a validacao dos digitos verificadores do cpf"""
-    
     pesosdv1 = [10, 9, 8, 7, 6, 5, 4, 3, 2]
     pesosdv2 = [11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
 
+    # somatorio dos pesos vezes digitos do cpf
     soma1 = 0
     soma2 = 0
 
@@ -34,7 +31,7 @@ def validar_cpf(cpf):
     if dv1 >= 10:
         dv1 = 0
 
-    soma2 += dv1 * pesosdv2[9]
+    soma2 += dv1 * pesosdv2[9] # termina de calcular a soma do dv2, incluindo o dv1
 
     dv2 = 11 - (soma2 % 11)
 

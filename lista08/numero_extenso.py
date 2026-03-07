@@ -14,12 +14,12 @@ def numero_por_extenso(numero):
     elif numero == 10:
         return dezenas[0]
     elif numero < 20:
-        return segunda_dezena[numero - 11]
-    else:
+        return segunda_dezena[numero - 11] # -11 para ajustar, pois a lista começa em onze
+    else: # de 20 a 99 o numero e composto por dezena e unidade
         dezena = numero // 10
         unidade = numero % 10
         if unidade == 0:
-            return dezenas[dezena-1]
+            return dezenas[dezena-1] # -1 para ajustar, pois a lista começa em dez e o resto da divisão inteira de 20 por 10 é 2
         else:
             return f"{dezenas[dezena-1]} e {unidades[unidade]}"
 

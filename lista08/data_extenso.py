@@ -18,8 +18,8 @@ def data_por_extenso(data):
             lista_data.append(str_data)
             str_data = ""
 
-    lista_data.append(str_data)
-    lista_data[1] = meses[int(lista_data[1]) - 1]
+    lista_data.append(str_data) # como a data nao termina com /, adiciona o ano a lista
+    lista_data[1] = meses[int(lista_data[1]) - 1] # pega o valor do mes, converte para inteiro e subtrai 1 para acessar o nome do mes na lista
 
     return f"{lista_data[0]} de {lista_data[1]} de {lista_data[2]}."
 

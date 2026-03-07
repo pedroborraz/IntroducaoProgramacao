@@ -8,6 +8,7 @@ from random import randint
 def criar_lista_palavras(palavras):
     lista = []
     palavra = ""
+
     for caractere in palavras:
         if caractere == " ":
             lista.append(palavra)
@@ -22,9 +23,11 @@ def escolher_palavra(lista):
     return lista[randint(0, len(lista) - 1)]
 
 def jogo_forca(palavra, palavra_oculta, letra):
+
     for i in range(len(palavra)):
         if palavra[i] == letra and palavra_oculta[i] == "_":
             return i
+        
     return "letra nao encontrada"
 
 def main():

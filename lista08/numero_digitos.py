@@ -5,10 +5,12 @@ passado por parâmetro.
 
 def quantidade_digitos(numero):
     numero_string = ""
+
     for digito in numero:
         if digito == '-' or digito == '+':
-            continue
+            continue # ignora o sinal de negativo ou positivo, ao chegar no continue, o loop volta para o inicio e nao executa o restante do codigo
         numero_string += digito
+
     return len(numero_string)
 
 def main():

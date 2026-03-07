@@ -6,6 +6,7 @@ branco)
 
 def eliminar_espacos(texto):
     nova_string = ""
+    
     for caractere in texto:
         if caractere != " ":
             nova_string += caractere
