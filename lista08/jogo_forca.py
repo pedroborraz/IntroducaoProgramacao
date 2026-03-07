@@ -36,7 +36,7 @@ def main():
     erros = 0
 
     while erros < 6 and "_" in palavra_oculta:
-        print(f"Palavra: {palavra_oculta} possue {len(palavra)} letras")
+        print(f"Palavra: {palavra_oculta} possui {len(palavra)} letras")
         letra = input("Digite uma letra: ")
         posicao = jogo_forca(palavra, palavra_oculta, letra)
 
