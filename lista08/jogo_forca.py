@@ -22,13 +22,16 @@ def criar_lista_palavras(palavras):
 def escolher_palavra(lista):
     return lista[randint(0, len(lista) - 1)]
 
-def jogo_forca(palavra, palavra_oculta, letra):
+def tentativa(palavra, palavra_oculta, letra):
 
+    posicoes = []
     for i in range(len(palavra)):
         if palavra[i] == letra and palavra_oculta[i] == "_":
-            return i
-        
-    return "letra nao encontrada"
+            posicoes.append(i)
+
+    if len(posicoes) > 0:
+        return posicoes
+    return -1
 
 def main():
     palavras = input("Digite uma lista de palavras separadas por um espaço: ")
@@ -37,22 +40,32 @@ def main():
 
     palavra_oculta = "_" * len(palavra)
     erros = 0
+    letras_usadas = []
 
     while erros < 6 and "_" in palavra_oculta:
         print(f"Palavra: {palavra_oculta} possui {len(palavra)} letras")
+        if letras_usadas:
+            print(f"Letras ja usadas: {', '.join(letras_usadas)}")
         letra = input("Digite uma letra: ")
-        posicao = jogo_forca(palavra, palavra_oculta, letra)
 
-        if posicao != "letra nao encontrada":
-            palavra_oculta = palavra_oculta[:posicao] + letra + palavra_oculta[posicao + 1:] # _ ate a posicao da letra certa + letra certa + o resto de _
+        if letra in letras_usadas:
+            print(f"Voce ja tentou a letra '{letra}' tente outra")
+            continue
+
+        letras_usadas.append(letra)
+        resultado_tentativa = tentativa(palavra, palavra_oculta, letra)
+
+        if resultado_tentativa != -1:
+            for p in resultado_tentativa:
+                palavra_oculta = palavra_oculta[:p] + letra + palavra_oculta[p + 1:]
         else:
             erros += 1
-            print(f"Voce errou pela {erros} vez! Tente de novo.")
+            print(f"Voce errou pela {erros} vez tente de novo")
 
     if "_" not in palavra_oculta:
-        print(f"Voce acertou! A palavra era: {palavra}")
+        print(f"Voce acertou, a palavra era: {palavra}")
     else:
-        print(f"Voce perdeu! A palavra era: {palavra}")
+        print(f"Voce perdeu, a palavra era: {palavra}")
 
 if __name__ == "__main__":
     main()
