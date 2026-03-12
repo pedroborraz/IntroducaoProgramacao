@@ -3,7 +3,7 @@ Desenvolva um jogo da forca. O programa terá uma lista de palavras como entrada
 escolherá uma aleatoriamente. O jogador poderá errar seis vezes antes de ser enforcado.
 """
 
-from random import randint
+from random import choice
 
 def criar_lista_palavras(palavras):
     lista = []
@@ -16,11 +16,11 @@ def criar_lista_palavras(palavras):
         else:
             palavra += caractere
 
-    lista.append(palavra) # caso nao termine com um espaço, adiciona a ultima palavra
+    lista.append(palavra)
     return lista
 
 def escolher_palavra(lista):
-    return lista[randint(0, len(lista) - 1)]
+    return choice(lista)
 
 def tentativa(palavra, palavra_oculta, letra):
 
