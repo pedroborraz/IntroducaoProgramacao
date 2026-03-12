@@ -16,7 +16,7 @@ def criar_lista_palavras(palavras):
         else:
             palavra += caractere
 
-    lista.append(palavra)
+    lista.append(palavra) # add ultima palavra caso o ultimo caractere nao seja um espaco
     return lista
 
 def escolher_palavra(lista):
@@ -26,12 +26,12 @@ def tentativa(palavra, palavra_oculta, letra):
 
     posicoes = []
     for i in range(len(palavra)):
-        if palavra[i] == letra and palavra_oculta[i] == "_":
+        if palavra[i] == letra and palavra_oculta[i] == "_": # verifica se a letra esta na palavra e se ainda nao foi revelada
             posicoes.append(i)
 
-    if len(posicoes) > 0:
+    if len(posicoes) > 0: # se tiver posicoes, retorna a lista de posicoes onde a letra foi encontrada
         return posicoes
-    return -1
+    return -1 # se nao for encontrada, retorna -1
 
 def main():
     palavras = input("Digite uma lista de palavras separadas por um espaço: ")
@@ -55,14 +55,14 @@ def main():
         letras_usadas.append(letra)
         resultado_tentativa = tentativa(palavra, palavra_oculta, letra)
 
-        if resultado_tentativa != -1:
+        if resultado_tentativa != -1: # se a letra foi encontrada, atualiza a palavra oculta revelando as letras encontradas
             for p in resultado_tentativa:
                 palavra_oculta = palavra_oculta[:p] + letra + palavra_oculta[p + 1:]
         else:
             erros += 1
             print(f"Voce errou pela {erros} vez tente de novo")
 
-    if "_" not in palavra_oculta:
+    if "_" not in palavra_oculta: # se nao tiver mais letras ocultas, o jogador venceu
         print(f"Voce acertou, a palavra era: {palavra}")
     else:
         print(f"Voce perdeu, a palavra era: {palavra}")
