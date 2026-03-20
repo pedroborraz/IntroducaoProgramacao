@@ -1,31 +1,32 @@
-# Python Exercise Sets
+# Conjuntos de Exercícios Python
 
-This repository contains Python programming exercises organized into separate exercise sets
+Este repositório contém exercícios de programação em Python organizados em conjuntos de exercícios separados
 
-Each folder includes standalone scripts covering core topics such as basic logic, user input and output, conditionals, loops, arrays, and string manipulation
+Cada pasta inclui scripts independentes cobrindo tópicos essenciais como lógica básica, entrada e saída, condicionais, loops, arrays e manipulação de strings
 
-## Repository Structure
+## Estrutura do Repositório
 
-- `lista02/`: introductory exercises on calculations and conditionals
-- `lista04/`: exercises involving loops, numeric operations, and simple simulations
-- `lista06/`: exercises on sequences, repetition structures, and validations
-- `lista07/`: exercises with arrays, matrices, and character handling
-- `lista08/`: exercises focused on strings, validations, and slightly more advanced problems
+- `lista02/`: exercícios introdutórios sobre cálculos e condicionais
+- `lista04/`: exercícios envolvendo loops, operações numéricas e simulações simples
+- `lista06/`: exercícios sobre sequências, estruturas de repetição e validações
+- `lista07/`: exercícios com arrays, matrizes e manipulação de caracteres
+- `lista08/`: exercícios focados em strings, validações e problemas um pouco mais avançados
 
-## How to Run
+## Como Executar
 
-Make sure Python 3 is installed, then run any script individually from the terminal:
+Certifique-se de que o Python3.x está instalado e execute qualquer script individualmente pelo terminal  
+Exemplo:
 
 ```bash
 python3 lista08/jogo_forca.py
 ```
 
-## Notes
+## Observações
 
-- The scripts read input from the terminal using `input()`
-- Each file solves a specific exercise
-- The current scripts do not require external dependencies
+- Os scripts leem entrada do terminal usando `input()`
+- Cada arquivo resolve um exercício específico
+- Os scripts atuais não requerem dependências externas
 
-## About
+## Sobre
 
-This repository is a collection of study exercises created to practice Python through small, focused problems
+Este repositório é uma coleção de exercícios de estudo criados para praticar Python através de pequenos problemas focados
